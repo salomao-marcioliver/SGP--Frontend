@@ -1,0 +1,38 @@
+/*ESTILOS GLOBAIS*/
+
+/* Reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Smoth Scroll */
+html {
+  scroll-behavior: smooth;
+  font-size: 16px; /* Define a base de cálculo para rem (1rem = 16px) */
+}
+
+/* Body background color */
+body {
+    min-height: 100vh;
+    width: 100vw;
+    background-color: #ecf0f3;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Links */
+a{
+    color:var(--color-primary);
+}
+
+
+/*Tema Global*/
+:root{
+    --color-primary:#4563ff;
+    --color-primary-light: #aab7f7;
+    --color-secundary: #fb8504;
+}
+
+
