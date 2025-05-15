@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useContext } from "react";
 import "./styles.css"
 import { BsBell, BsFillPersonFill } from "react-icons/bs";
-import { AuthContext } from "../contexts/auth";
+import { AuthContext } from "../../contexts/auth";
 
 export default function HeaderCustom(){
 
