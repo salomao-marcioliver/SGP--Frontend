@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  flex-direction: column; /*um em baixo do outro*/
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 0 2rem; /*espaçamento horizontal*/
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /*centraliza verticalmente*/
+  align-items: center; /*centraliza horizontalmente*/
+  width: 100%;
+  max-width: 500px;  
+  padding: 30px 20px;
+  border-radius: 10px;
+  box-shadow: -2px -2px 8px rgba(255, 255, 255, 1),
+              -2px -2px 12px rgba(255, 255, 255, 0.5),
+              inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+              2px 2px 8px rgba(0, 0, 0, .3);
+  background-color: #ecf0f3;
+
+}

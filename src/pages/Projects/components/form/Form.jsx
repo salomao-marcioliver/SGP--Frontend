@@ -1,52 +1,6 @@
-import styled from "styled-components";
 import { toast } from "react-toastify";
 import { useRef, useEffect } from "react";
-import { api } from "../../../services/api";
-
-const FormContainer = styled.form`
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  max-width: 500px;
-  gap: 10px;
-  flex-wrap: wrap;
-  background-color: #fff;
-  padding: 20px;
-  box-shadow: 0px 0px 5px #ccc;
-  border-radius: 5px;
-`;
-
-const InputArea = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
-const Input = styled.input`
-  width: 120px;
-  padding: 0 10px;
-  border: 1px solid #bbb;
-  border-radius: 5px;
-  height: 40px;
-`;
-
-const Label = styled.label``;
-
-const Button = styled.button`
-  padding: 10px;
-  cursor: pointer;
-  border-radius: 5px;
-  border: none;
-  background-color: #2c73d2;
-  color: white;
-  height: 42px;
-`;
-
-const Select = styled.select`
-  width: 150px;
-  color: black;
-  display: flex;
-`;
-
+import { api } from "../../../../services/api";
 
 
 const Form = ({ onEdit, setOnEdit }) => {
@@ -118,33 +72,46 @@ const Form = ({ onEdit, setOnEdit }) => {
 
 
   return (
-    <FormContainer ref={ref} onSubmit={handleSubmit}>
-      <InputArea>
-        <Label>Titulo do Projeto</Label>
-        <Input name="titulo" />
-      </InputArea>
-      <InputArea>
-        <Label>Data de Início</Label>
-        <Input name="data_inicio" type="text" />
-      </InputArea>
-      <InputArea>
-        <Label>Data de Término</Label>
-        <Input name="data_termino" type="text" />
-      </InputArea>
-      <InputArea>
-        <Label>Cod. Identificador</Label>
-        <Input name="cod_coord" type="text" />
-      </InputArea>
-      <InputArea>
-        <Label>Nome Coordenador(a)</Label>
-        <Input name="nome_coord" type="text" />
-      </InputArea>
-      <InputArea>
-        <Label>Instituto</Label>
-        <Input name="instituto_coord" type="text" />
-      </InputArea>
-      <Button type="submit">SALVAR</Button>
-    </FormContainer>
+
+    <div >
+   <form onSubmit={handleSubmit} className="form">
+  <div className="form-grid">
+    <div className="form-group">
+      <label htmlFor="titulo">Título do Projeto</label>
+      <input className="form-input" name="titulo" id="titulo" type="text" />
+    </div>
+
+    <div className="form-group">
+      <label htmlFor="data_inicio">Data de Início</label>
+      <input className="form-input" name="data_inicio" id="data_inicio" type="date" />
+    </div>
+
+    <div className="form-group">
+      <label htmlFor="data_termino">Data de Término</label>
+      <input className="form-input" name="data_termino" id="data_termino" type="date" />
+    </div>
+
+    <div className="form-group">
+      <label htmlFor="cod_coord">Cód. Identificador</label>
+      <input className="form-input" name="cod_coord" id="cod_coord" type="text" />
+    </div>
+
+    <div className="form-group">
+      <label htmlFor="nome_coord">Nome do Coordenador(a)</label>
+      <input className="form-input" name="nome_coord" id="nome_coord" type="text" />
+    </div>
+
+    <div className="form-group">
+      <label htmlFor="instituto_coord">Instituto</label>
+      <input className="form-input" name="instituto_coord" id="instituto_coord" type="text" />
+    </div>
+  </div>
+
+  <button type="submit" className="save-btn">SALVAR</button>
+</form>
+
+    </div>
+   
   );
 };
 

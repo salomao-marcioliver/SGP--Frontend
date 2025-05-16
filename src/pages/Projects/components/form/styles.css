@@ -1,0 +1,61 @@
+.container {
+  display: flex;
+  flex-direction: column; /*um em baixo do outro*/
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 0 2rem; /*espaçamento horizontal*/
+}
+.form {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 4px;
+  color: var(--color-primary);
+}
+
+.form-input {
+  padding: 10px 14px;
+  font-size: 0.9rem;
+  border-radius: 15px;
+  background-color: #ecf0f3;
+  border: none;
+  outline: none;
+  box-shadow: inset -1px -1px 3px rgba(255, 255, 255, 0.9),
+              inset 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.save-btn {
+  margin-top: 24px;
+  padding: 10px;
+  font-size: 0.9rem;
+  border-radius: 20px;
+  background-color: var(--color-primary);
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  box-shadow: -1px -1px 4px rgba(255, 255, 255, 0.8),
+              1px 1px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease-in-out;
+}
+
+.save-btn:hover {
+  background-color: var(--color-primary-light);
+}
