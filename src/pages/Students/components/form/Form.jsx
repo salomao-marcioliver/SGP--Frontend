@@ -1,53 +1,7 @@
-import styled from "styled-components";
 import { toast } from "react-toastify";
 import { useRef, useEffect } from "react";
-import { api } from "../../../services/api";
-
-const FormContainer = styled.form`
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  max-width: 400px;
-  gap: 10px;
-  flex-wrap: wrap;
-  background-color: #fff;
-  padding: 20px;
-  box-shadow: 0px 0px 5px #ccc;
-  border-radius: 5px;
-`;
-
-const InputArea = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
-const Input = styled.input`
-  width: 160px;
-  padding: 0 10px;
-  border: 1px solid #bbb;
-  border-radius: 5px;
-  height: 40px;
-`;
-
-const Label = styled.label``;
-
-const Button = styled.button`
-  padding: 10px;
-  cursor: pointer;
-  border-radius: 5px;
-  border: none;
-  background-color: #2c73d2;
-  color: white;
-  height: 42px;
-`;
-
-const Select = styled.select`
-  width: 150px;
-  color: black;
-  display: flex;
-`;
-
-
+import { api } from "../../../../services/api";
+import "./styles.css"
 
 const Form = ({ onEdit, setOnEdit }) => {
   const ref = useRef();
@@ -116,33 +70,61 @@ const Form = ({ onEdit, setOnEdit }) => {
   };
 
   return (
-    <FormContainer ref={ref} onSubmit={handleSubmit}>
-      <InputArea>
-        <Label>Matrícula</Label>
-        <Input name="matricula" />
-      </InputArea>
-      <InputArea>
-        <Label>Nome</Label>
-        <Input name="nome" type="text" />
-      </InputArea>
-      <InputArea>
-        <Label>Curso</Label>
-        <Input name="curso" type="text" />
-      </InputArea>
-      <InputArea>
-        <Label>Data de Nascimento</Label>
-        <Input name="data_nasc" type="text" />
-      </InputArea>
-      <InputArea>
-        <Label>Instituto</Label>
-        <Input name="instituto" type="text" />
-      </InputArea>
-      <InputArea>
-        <Label>Vinculado ao Projeto:</Label>
-        <Input name="codprojeto" type="text" placeholder="Digite o ID do Projeto" />
-      </InputArea>
-      <Button type="submit">SALVAR</Button>
-    </FormContainer>
+
+    <div className="container-form">
+      <form onSubmit={handleSubmit} className="form">
+          <div className="form-grid">
+
+            <div className="form-group">
+              <label htmlFor="matricula">Matrícula</label>
+              <input className="form-input" name="matricula" id="matricula" type="text" />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="nome">Nome Completo do Bolsista</label>
+              <input className="form-input" name="nome" id="nome" type="text" />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="curso">Curso</label>
+              <input className="form-input" name="curso" id="curso" type="text" />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="instituto">Instituto</label>
+              <select className="form-input" name="instituto" id="instituto" >
+                <option value="">Selecione um Instituto</option>
+                <option value="CFI">CFI</option>
+                <option value="ISCO">ISCO</option>
+                <option value="IEG">IEG</option>
+                <option value="ICTA">ICTA</option>
+                <option value="ICS">ICS</option>
+                <option value="ICED">ICED</option>
+                <option value="IBEF">IBEF</option>
+                <option value="IFII">IFII</option>
+      </select>
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="data_nasc">Data de Nascimento</label>
+              <input className="form-input" name="data_nasc" id="data_nasc" type="date" />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="codproject">Código do Projeto </label>
+              <input className="form-input" name="codproject" id="codproject" type="text" />
+            </div>
+
+          </div>
+
+          <button type="submit" className="save-btn">Salvar</button>
+
+      </form>
+
+
+    </div>
+
+
   );
 };
 

@@ -1,7 +1,7 @@
 import { toast } from "react-toastify";
 import { useRef, useEffect } from "react";
 import { api } from "../../../../services/api";
-
+import "./styles.css"
 
 const Form = ({ onEdit, setOnEdit }) => {
   const ref = useRef();
@@ -73,7 +73,7 @@ const Form = ({ onEdit, setOnEdit }) => {
 
   return (
 
-    <div >
+    <div className="container-form">
    <form onSubmit={handleSubmit} className="form">
   <div className="form-grid">
     <div className="form-group">
@@ -103,11 +103,21 @@ const Form = ({ onEdit, setOnEdit }) => {
 
     <div className="form-group">
       <label htmlFor="instituto_coord">Instituto</label>
-      <input className="form-input" name="instituto_coord" id="instituto_coord" type="text" />
+      <select className="form-input" name="instituto_coord" id="instituto_coord" >
+        <option value="">Selecione um Instituto</option>
+        <option value="CFI">CFI</option>
+        <option value="ISCO">ISCO</option>
+        <option value="IEG">IEG</option>
+        <option value="ICTA">ICTA</option>
+        <option value="ICS">ICS</option>
+        <option value="ICED">ICED</option>
+        <option value="IBEF">IBEF</option>
+        <option value="IFII">IFII</option>
+      </select>
     </div>
   </div>
 
-  <button type="submit" className="save-btn">SALVAR</button>
+  <button type="submit" className="save-btn">Salvar</button>
 </form>
 
     </div>

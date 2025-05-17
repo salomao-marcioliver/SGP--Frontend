@@ -34,6 +34,8 @@ a{
     --color-primary-light: #aab7f7;
     --color-secundary: #fb8504;
     --background-color:  #ecf0f3;
+    --shadow-light: rgba(255, 255, 255, 0.5);
+    --shadow-dark: rgba(255, 255, 255, 0.1);
 }
 
 

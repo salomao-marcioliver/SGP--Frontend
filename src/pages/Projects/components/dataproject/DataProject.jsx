@@ -45,13 +45,13 @@ const Data = () => {
   ]);
 
   const setOnEdit = () => {};
-
 */
 
 const Data = ({ projects, setProjects, setOnEdit }) => {
   const handleEdit = (item) => {
     setOnEdit(item);
   };
+
 
   const handleDelete = async (id) => {
     await api
@@ -65,8 +65,7 @@ const Data = ({ projects, setProjects, setOnEdit }) => {
       });
     setOnEdit(null)
   }
-
-
+  
   return (
     <div className="table-container">   
 
@@ -114,10 +113,12 @@ const Data = ({ projects, setProjects, setOnEdit }) => {
           ))}
         </tbody>
       </table>
+
       </div>
       <div className="link-container">
         <Link to="/">Ir para Home</Link>
       </div>
+
     </div>
   )
 }
