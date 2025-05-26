@@ -5,6 +5,7 @@ import Projects from '../pages/Projects'
 import LoginPage from '../pages/LoginPage'
 import { useContext } from 'react'
 import Students from '../pages/Students'
+import RegisterPage from '../pages/Register'
 
 function MainRoutes() {
   const Private = ({ children }) => {
@@ -25,6 +26,7 @@ function MainRoutes() {
       <AuthProvider>
         <Routes>
           <Route exact path='/login' element={<LoginPage />} />
+          <Route exact path='/register' element={<RegisterPage />} />
           <Route exact path='/' element={<Private><Home /></Private>} />
           <Route exact path='/projetos' element={<Private><Projects /></Private>} />
           <Route exact path='/bolsistas' element={<Private><Students /></Private>} />

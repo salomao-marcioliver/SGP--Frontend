@@ -20,16 +20,18 @@ const LoginPage = () => {
 
         <h1>LOGIN</h1>
 
-        <form className="login-form" onSubmit={handleSubmit}>
+        <form className="register-form" onSubmit={handleSubmit}>
           <input className="form-input" type="email" name="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)}
           placeholder="E-mail" required/>
           <input className="form-input" type="password" name="password" id="password" value={password} onChange={(e) => setPassoword(e.target.value)} placeholder="Senha" required/>
 
-          <button className="form-btn" type="submit">Entrar</button>
+        <button className="form-btn" type="submit">Entrar</button>
 
         </form>
 
-        <p class="text"><a href="#">Esqueceu a senha?</a> ou <a href="#">Cadastro</a> </p>
+        
+
+        <p class="text"><a href="#">Esqueceu a senha?</a> ou <a href="/register">Cadastro</a> </p>
 
       </div>
       
