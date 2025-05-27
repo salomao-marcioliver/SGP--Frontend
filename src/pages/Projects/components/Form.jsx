@@ -86,7 +86,7 @@ const Form = ({ onEdit, setOnEdit }) => {
           titulo: project.titulo.value,
           data_inicio: project.data_inicio.value,
           data_termino: project.data_termino.value,
-          codCoord: project.cod_coord.value,
+          codcoord: project.cod_coord.value,
           nome_coord: project.nome_coord.value,
           instituto_coord: project.instituto_coord.value
         })
@@ -98,7 +98,7 @@ const Form = ({ onEdit, setOnEdit }) => {
           titulo: project.titulo.value,
           data_inicio: project.data_inicio.value,
           data_termino: project.data_termino.value,
-          codCoord: project.cod_coord.value,
+          codcoord: project.cod_coord.value,
           nome_coord: project.nome_coord.value,
           instituto_coord: project.instituto_coord.value
         })
@@ -125,11 +125,11 @@ const Form = ({ onEdit, setOnEdit }) => {
       </InputArea>
       <InputArea>
         <Label>Data de Início</Label>
-        <Input name="data_inicio" type="text" />
+        <Input name="data_inicio" type="date" />
       </InputArea>
       <InputArea>
         <Label>Data de Término</Label>
-        <Input name="data_termino" type="text" />
+        <Input name="data_termino" type="date" />
       </InputArea>
       <InputArea>
         <Label>Cod. Identificador</Label>
