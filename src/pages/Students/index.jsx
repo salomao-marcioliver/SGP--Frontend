@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react"
-import DataProject from './components/DataProject'
+import DataProject from './components/dataproject/DataProject'
 import { api } from '../../services/api'
 import styled from "styled-components"
-import Form from "./components/Form"
+import Form from "./components/form/Form"
 
 const Container = styled.div`
   width: 100%;

@@ -1,0 +1,73 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    background-color: transparent;
+    backdrop-filter: blur(4px);
+    border-radius: 20px;
+    margin: 20px;
+    box-shadow: -2px -2px 8px rgba(255, 255, 255, 1),
+              -2px -2px 12px rgba(255, 255, 255, 0.5),
+              inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+              2px 2px 8px rgba(0, 0, 0, .3);
+}
+
+.header-left {
+    display: flex;
+    flex-direction: column;
+}
+.header-right {
+    display: flex;
+    gap: 15px;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 0;
+  color: #333;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  color: #777;
+  margin-top: 4px;
+}
+
+.icon-button {
+  background-color: #ecf0f3;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow:-2px -2px 8px rgba(255, 255, 255, 1),
+              -2px -2px 12px rgba(255, 255, 255, 0.5),
+              inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+              2px 2px 8px rgba(0, 0, 0, .3);
+  transition: transform 0.1s ease-in-out;
+}
+
+.icon-button:hover {
+  transform: scale(1.05);
+}
+
+.logout-button {
+  padding: 8px 15px;
+  border-radius: 20px;
+  border: none;
+  background-color: #ecf0f3;
+  box-shadow:
+    -2px -2px 5px rgba(255, 255, 255, 0.8),
+    2px 2px 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.session-timer {
+  font-size: 0.9rem;
+  color: #333;
+  margin: 0 20px;
+}
+

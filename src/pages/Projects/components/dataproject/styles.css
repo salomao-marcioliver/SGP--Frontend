@@ -1,0 +1,82 @@
+.table-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px auto;
+}
+
+/* Container da tabela com sombra interna */
+.table-wrapper {
+  border-radius: 12px;
+  background-color: var(--background-color);
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  overflow-x: auto;
+}
+
+.neo-table {
+    width: 100%;
+    max-width: 1100px;
+    border-collapse: collapse;
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: var(--background-color);
+    box-shadow: -2px -2px 8px rgba(255, 255, 255, 1),
+              -2px -2px 12px rgba(255, 255, 255, 0.5),
+              inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+              2px 2px 8px rgba(0, 0, 0, .3);
+    box-shadow: 8px 8px 16px #bebebe,
+              -8px -8px 16px #ffffff;
+    font-size: 12px;
+}
+
+.neo-table thead {
+  background-color: var(--color-primary-light);
+  color: white;
+}
+
+.neo-table th,
+.neo-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #c8c9d1;
+    position: relative;
+}
+
+.neo-table tbody tr {
+  transition: background 0.3s;
+}
+
+.neo-table tbody tr:hover {
+  background-color: var(--color-primary-light);
+  color: white;
+}
+
+.icon-button {
+    width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--background-color);
+  box-shadow: 2px 2px 4px rgba(255, 255, 255, 0.1),
+              -2px -2px 4px rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: var(--transition);
+  font-size: 1rem;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.icon-button:hover {
+  transform: scale(1.1);
+}
+
+.link-container {
+  margin-top: 20px;
+}

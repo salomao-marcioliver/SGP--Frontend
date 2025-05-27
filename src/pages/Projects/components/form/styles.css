@@ -1,0 +1,83 @@
+.container-form {
+  display: flex;
+  flex-direction: column; /*um em baixo do outro*/
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 0 2rem; /*espaçamento horizontal*/
+}
+.form {
+  width: 150%;
+  padding: 20px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 4px;
+  color: var(--color-primary);
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 0.9rem;
+  border-radius: 15px;
+  background-color: #ecf0f3;
+  border: none;
+  outline: none;
+  box-shadow: inset -1px -1px 3px rgba(255, 255, 255, 0.9),
+              inset 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.save-btn {
+  background-color: var(--background-color);
+  border-radius: 50px;
+  box-shadow: inset 2px 2px 5px #bcbcbc, inset -2px -2px 5px #ffffff;
+  color: var(--color-primary); /*cor do texto*/
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 16px;
+  padding: 15px 40px;
+  transition: all 0.2s ease-in-out;
+  border: 2px solid var(--shadow-light);
+  font-family: "Poppins", sans-serif;
+}
+
+.save-btn:hover {
+  box-shadow: inset 2px 2px 5px #bcbcbc, inset -2px -2px 5px #ffffff, 2px 2px 5px var(--shadow-light), -2px -2px 5px #ffffff;
+}
+
+.save-button:focus {
+  outline: none;
+  box-shadow: inset 2px 2px 5px #bcbcbc, inset -2px -2px 5px #ffffff, 2px 2px 5px var(--shadow-light), -2px -2px 5px #ffffff;
+}
+
+select.form-input {
+  width: 100%;
+  height: 55px;
+  padding: 10px 14px;
+  font-size: 0.9rem;
+  border-radius: 25px;
+  background-color: #ecf0f3;
+  border: none;
+  outline: none;
+  box-shadow: inset -4px -4px 6px rgba(255, 255, 255, 0.9),
+              inset 4px 4px 6px rgba(0, 0, 0, 0.1);
+  
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg width='12' height='8' viewBox='0 0 12 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23666' stroke-width='2' fill='none' fill-rule='evenodd'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 12px;
+}
