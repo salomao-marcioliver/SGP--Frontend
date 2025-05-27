@@ -8,6 +8,8 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null)
   const [loading, setLoading] = useState(true)
 
+   const [error, setError] = useState(null); // armazenar erros
+
   useEffect(() => {
     const recoveredUser = localStorage.getItem('user');
     const token = localStorage.getItem('token');
@@ -21,21 +23,41 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (email, password) => {
 
-    //Criar uma session
-    const response = await createSession(email, password)
+    try{
+      setError(null) // limpa erro anterior
 
-    const loggedUser = response.data.user;
-    const token = response.data.token;
+      //Criar uma session
+      const response = await createSession(email, password)
 
-    localStorage.setItem("user", JSON.stringify(loggedUser))
-    localStorage.setItem("token", token)
+      const loggedUser = response.data.user;
+      const token = response.data.token;
 
-    api.defaults.headers.Authorization = `Bearer ${token}`;
-    //api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-    console.log("aqui é o teste", api.defaults.headers.Authorization)
+      localStorage.setItem("user", JSON.stringify(loggedUser))
+      localStorage.setItem("token", token)
 
-    setUser(loggedUser)
-    navigate("/")
+      api.defaults.headers.Authorization = `Bearer ${token}`;
+      //api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+      console.log("aqui é o teste", api.defaults.headers.Authorization)
+
+      setUser(loggedUser)
+      navigate("/")
+
+    } catch(errorResponse){
+      console.error("Erro no login:", errorResponse)
+
+      if (errorResponse.response) {
+        const status = errorResponse.response.status
+        const message = errorResponse.response.data.err
+
+        if (status === 404 || status === 401) {
+          setError(message) // mostra erro vindo da API
+        } else {
+          setError("Erro ao tentar conectar. Tente novamente.")
+        }
+      } else {
+        setError("Erro de conexão. Verifique sua internet.")
+      }
+    }
 
   }
 
@@ -48,7 +70,9 @@ export const AuthProvider = ({ children }) => {
     navigate("/login")
   }
   return (
-    <AuthContext.Provider value={{ authenticated: !!user, user, loading, login, logout }}>
+    <AuthContext.Provider
+      value={{ authenticated: !!user, user, loading, login, logout, error }}
+    >
       {children}
     </AuthContext.Provider>
   )
