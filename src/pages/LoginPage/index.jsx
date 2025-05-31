@@ -31,7 +31,7 @@ const LoginPage = () => {
 
         
 
-        <p class="text"><a href="#">Esqueceu a senha?</a> ou <a href="/register">Cadastro</a> </p>
+        {/* <p class="text"><a href="#">Esqueceu a senha?</a> ou <a href="/register">Cadastro</a> </p> */}
 
       </div>
       

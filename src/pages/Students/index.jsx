@@ -3,6 +3,7 @@ import DataProject from './components/dataproject/DataProject'
 import { api } from '../../services/api'
 import styled from "styled-components"
 import Form from "./components/form/Form"
+import HeaderCustom from "../../components/header/header";
 
 const Container = styled.div`
   width: 100%;
@@ -32,11 +33,15 @@ const Students = () => {
   }, [students])
 
   return (
-    <Container>
-      <Title>Bolsistas</Title>
-      <Form onEdit={onEdit} setOnEdit={setOnEdit} students={students}/>
-      <DataProject students={students} setStudents={setStudents} setOnEdit={setOnEdit}/>
-    </Container>
+    <>
+      <HeaderCustom />
+      <Container>
+
+        <Title>Bolsistas</Title>
+        <Form onEdit={onEdit} setOnEdit={setOnEdit} students={students} />
+        <DataProject students={students} setStudents={setStudents} setOnEdit={setOnEdit} />
+      </Container>
+    </>
   )
 }
 

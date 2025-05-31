@@ -3,7 +3,11 @@ import DataProject from './components/dataproject/DataProject'
 import { api } from '../../services/api'
 import Form from "./components/form/Form"
 import HeaderCustom from "../../components/header/header";
+import styled from "styled-components"
 
+const Title = styled.h2`
+text-align: center;
+`;
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
@@ -21,7 +25,9 @@ const Projects = () => {
 
   return (
     <div> 
+      
       <HeaderCustom/>
+      <Title>Projetos</Title>
 
       <div className="container">
         <div className="form-container">

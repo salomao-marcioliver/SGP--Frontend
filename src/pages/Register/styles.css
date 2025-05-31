@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  padding: 0 2rem; /*espaçamento horizontal*/
+  padding: 0; /*espaçamento horizontal*/
 }
 
 .form-box {
