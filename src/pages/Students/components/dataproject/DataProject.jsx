@@ -33,13 +33,13 @@ const Data = () => {
   const setOnEdit = () => {};
 */
 
-  
-  const Data = ({ students, setStudents, setOnEdit }) => {
+
+const Data = ({ students, setStudents, setOnEdit }) => {
 
   const handleEdit = (item) => {
     setOnEdit(item);
   };
-  
+
 
   const handleDelete = async (id) => {
     await api
@@ -59,48 +59,49 @@ const Data = () => {
     <div className="table-container">
 
       <div className="table-wrapper">
-        <table className="neo-table">        
-        <thead>
-          <tr>
-            <th>Matrícula</th>
-            <th>Nome</th>
-            <th>Curso</th>
-            <th>Instituto</th>
-            <th>Projeto</th>
-            <th>Coordenador(a)</th>
-            <th>Ações</th>
-          </tr>
-        </thead>
+        <table className="neo-table">
+          <thead>
+            <tr>
+              <th>Matrícula</th>
+              <th>Nome</th>
+              <th>Curso</th>
+              <th>Instituto</th>
+              <th>Projeto</th>
+              <th>Coordenador(a)</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
 
-        <tbody>
-          {students.map((item, i) => (
-            <tr key={i}>
-              <td>{item.num_matricula}</td>
-              <td>{item.nome}</td>
-              <td>{item.curso}</td>
-              <td>{item.instituto}</td>
-              <td>{item.codprojeto} - {item.titulo}</td>
-              <td>{item.nome_coord}</td>
-              <td>
-                <div className="action-buttons">
-                  <button
-                        onClick={() => handleEdit(item)}
-                        className="icon-button"
-                        title="Editar">
-                        <FaEdit />
-                  </button>
-                  <button
-                        onClick={() => handleDelete(item.num_matricula)}
-                        className="icon-button"
-                        title="Excluir">
-                        <FaTrash />
-                  </button>
-                </div>
+          <tbody>
+
+            {students.map((item, i) => (
+              <tr key={i}>
+                <td>{item.num_matricula}</td>
+                <td>{item.nome}</td>
+                <td>{item.curso}</td>
+                <td>{item.instituto}</td>
+                <td>{item.codprojeto} - {item.projeto?.titulo}</td>
+                <td>{item.projeto?.nome_coord}</td>
+                <td>
+                  <div className="action-buttons">
+                    <button
+                      onClick={() => handleEdit(item)}
+                      className="icon-button"
+                      title="Editar">
+                      <FaEdit />
+                    </button>
+                    <button
+                      onClick={() => handleDelete(item.num_matricula)}
+                      className="icon-button"
+                      title="Excluir">
+                      <FaTrash />
+                    </button>
+                  </div>
                 </td>
               </tr>
-          ))}
+            ))}
 
-        </tbody>
+          </tbody>
 
         </table>
 
